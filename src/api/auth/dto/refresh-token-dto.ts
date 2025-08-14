@@ -1,7 +1,11 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsOptional, IsString } from 'class-validator';
 
 export class RefreshTokenDto {
-  @IsNotEmpty({ message: 'Refresh token kiritilishi shart' })
+  @IsOptional()
   @IsString({ message: 'Refresh token matn formatida bo‘lishi kerak' })
-  refreshToken: string;
+  refreshToken?: string;
+
+  @IsOptional()
+  @IsString({ message: 'Access token matn formatida bo‘lishi kerak' })
+  accessToken?: string;
 }

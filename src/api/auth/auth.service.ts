@@ -76,5 +76,15 @@ export class AuthService {
       refreshToken
     };
   }
+
+  async authdecode(refreshtokendto:RefreshTokenDto) {
+    const {email,role}=await this.tokenservice.verifyAccessToken(refreshtokendto.accessToken);
+  
+    const payload={
+      email,
+      role
+    }
+    return payload;
+  }
   
 }

@@ -27,5 +27,10 @@ export class AuthController {
     return this.authService.authRefresh(refreshtokendto);
   }
 
+  @Public()
+  @Post('decode')
+  authdecode(@Body()refreshtokendto:RefreshTokenDto){
+    return this.authService.authdecode(refreshtokendto);
+  }
   
 }

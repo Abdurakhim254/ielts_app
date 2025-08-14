@@ -1,99 +1,363 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+IELTS Backend API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+A comprehensive backend API built with NestJS to support the IELTS application, facilitating functionalities like user authentication, question management, test submissions, and result processing.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+🚀 Features
 
-## Description
+User Authentication: Secure login and registration with JWT-based authentication.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Role-Based Access Control: Differentiated access for users and administrators.
 
-## Project setup
+Question Management: CRUD operations for managing IELTS questions.
 
-```bash
-$ pnpm install
-```
+Test Submission: Users can submit answers, and results are processed accordingly.
 
-## Compile and run the project
+Result Processing: Evaluation of user responses with feedback.
 
-```bash
-# development
-$ pnpm run start
+🛠️ Technologies Used
 
-# watch mode
-$ pnpm run start:dev
+NestJS: A progressive Node.js framework for building efficient and scalable server-side applications.
 
-# production mode
-$ pnpm run start:prod
-```
+TypeScript: A superset of JavaScript that compiles to clean, readable JavaScript.
 
-## Run tests
+Passport.js: Authentication middleware for Node.js.
 
-```bash
-# unit tests
-$ pnpm run test
+JWT (JSON Web Tokens): Compact, URL-safe means of representing claims to be transferred between two parties.
 
-# e2e tests
-$ pnpm run test:e2e
+Swagger: API documentation and testing tool.
 
-# test coverage
-$ pnpm run test:cov
-```
+TypeORM: ORM for TypeScript and JavaScript (ES7, ES6, ES5).
 
-## Deployment
+PostgreSQL: Relational database management system.
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+🛡️ Authentication API
 
-```bash
-$ pnpm install -g mau
-$ mau deploy
-```
+Bu bo‘lim foydalanuvchilarni ro‘yxatdan o‘tkazish, login qilish, token yangilash va tokenni dekodlash funksiyalarini taqdim etadi.
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+Base URL:
 
-## Resources
+http://localhost:4000/api/v1/auth
 
-Check out a few resources that may come in handy when working with NestJS:
+1️⃣ Register (Ro‘yxatdan o‘tish)
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+Endpoint: POST /auth/register
+Access: Public
 
-## Support
+Body (JSON):
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+{
+  "email": "user@example.com",
+  "password": "your_password"
+}
 
-## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Response (200 OK):
 
-## License
+{
+  "accessToken": "jwt_access_token",
+  "refreshToken": "jwt_refresh_token",
+  "user": {
+    "id": 1,
+    "email": "user@example.com",
+    "role": "user"
+  }
+}
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+Errors:
+
+400 Bad Request: Email is required yoki Password is required
+
+409 Conflict: User already exists
+
+2️⃣ Login
+
+Endpoint: POST /auth/login
+Access: Public
+
+Body (JSON):
+
+{
+  "email": "user@example.com",
+  "password": "your_password"
+}
+
+
+Response (200 OK):
+
+{
+  "accessToken": "jwt_access_token",
+  "refreshToken": "jwt_refresh_token",
+  "user": {
+    "id": 1,
+    "email": "user@example.com",
+    "role": "user"
+  }
+}
+
+
+Errors:
+
+400 Bad Request: Email or password is missing
+
+401 Unauthorized: Invalid credentials
+
+3️⃣ Refresh Token
+
+Endpoint: POST /auth/refresh
+Access: Public
+
+Body (JSON):
+
+{
+  "refreshToken": "your_refresh_token",
+  "accessToken": "optional_access_token"
+}
+
+
+Notes:
+
+accessToken ixtiyoriy, agar yuborilsa tokenni tekshirishda ishlatiladi.
+
+Har safar yangi accessToken va refreshToken qaytariladi.
+
+Response (200 OK):
+
+{
+  "accessToken": "new_jwt_access_token",
+  "refreshToken": "new_jwt_refresh_token"
+}
+
+
+Errors:
+
+400 Bad Request: Refresh token is required
+
+401 Unauthorized: Invalid refresh token
+
+4️⃣ Decode Token
+
+Endpoint: POST /auth/decode
+Access: Public
+
+Body (JSON):
+
+{
+  "refreshToken": "your_refresh_token",
+  "accessToken": "optional_access_token"
+}
+
+
+Response (200 OK):
+
+{
+  "email": "user@example.com",
+  "role": "user",
+  "id": 1
+}
+
+
+Errors:
+
+400 Bad Request: Token is required
+
+401 Unauthorized: Invalid token
+
+
+Barcha endpointlar JSON formatida ma’lumot oladi va qaytaradi.
+
+accessToken va refreshToken JWT formatida bo‘lib, foydalanuvchini autentifikatsiya qilish uchun ishlatiladi.
+
+decode endpoint frontend uchun foydalanuvchi rolini va emailini cookie’ga saqlashda ishlatiladi.
+
+
+📋 Questions API
+
+Base URL:
+
+http://localhost:4000/api/v1/question
+
+1️⃣ Create Question
+
+Endpoint: POST /question
+Access: Admin Only
+
+Body (JSON):
+
+{
+  "text": "Which planet is known as the Red Planet?",
+  "options": ["Earth", "Mars", "Jupiter", "Venus"],
+  "correctIndex": 1
+}
+
+
+Response (200 OK):
+
+{
+  "id": 1,
+  "text": "Which planet is known as the Red Planet?",
+  "options": ["Earth", "Mars", "Jupiter", "Venus"],
+  "correctIndex": 1,
+  "createdAt": "2025-08-13T13:37:02.243Z",
+  "updatedAt": "2025-08-13T13:37:02.243Z"
+}
+
+
+Errors:
+
+400 Bad Request: validation errors
+
+403 Forbidden: if user is not admin
+
+2️⃣ Get All Questions
+
+Endpoint: GET /question
+Access: Admin or Authorized Role
+
+Response (200 OK):
+
+{
+  "message": "Questions Found Successfully",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Which planet is known as the Red Planet?",
+      "options": ["Earth", "Mars", "Jupiter", "Venus"],
+      "correctIndex": 1,
+      "createdAt": "2025-08-13T13:37:02.243Z",
+      "updatedAt": "2025-08-13T13:37:02.243Z"
+    }
+  ]
+}
+
+3️⃣ Get One Question
+
+Endpoint: GET /question/:id
+Access: Admin Only
+
+Params:
+
+id: Question ID (number)
+
+Response (200 OK):
+
+{
+  "id": 1,
+  "text": "Which planet is known as the Red Planet?",
+  "options": ["Earth", "Mars", "Jupiter", "Venus"],
+  "correctIndex": 1,
+  "createdAt": "2025-08-13T13:37:02.243Z",
+  "updatedAt": "2025-08-13T13:37:02.243Z"
+}
+
+
+Errors:
+
+404 Not Found: if question does not exist
+
+403 Forbidden: if user is not admin
+
+4️⃣ Update Question
+
+Endpoint: PUT /question/:id
+Access: Admin Only
+
+Params:
+
+id: Question ID (number)
+
+Body (JSON):
+
+{
+  "text": "Updated question text",
+  "options": ["Option1", "Option2", "Option3", "Option4"],
+  "correctIndex": 2
+}
+
+
+Response (200 OK):
+
+{
+  "id": 1,
+  "text": "Updated question text",
+  "options": ["Option1", "Option2", "Option3", "Option4"],
+  "correctIndex": 2,
+  "createdAt": "2025-08-13T13:37:02.243Z",
+  "updatedAt": "2025-08-14T12:00:00.000Z"
+}
+
+
+Errors:
+
+400 Bad Request: validation errors
+
+403 Forbidden: if user is not admin
+
+404 Not Found: if question does not exist
+
+5️⃣ Delete Question
+
+Endpoint: DELETE /question/:id
+Access: Admin Only
+
+Params:
+
+id: Question ID (number)
+
+Response (200 OK):
+
+{
+  "message": "Question deleted successfully"
+}
+
+
+Errors:
+
+403 Forbidden: if user is not admin
+
+404 Not Found: if question does not exist
+
+
+
+📝 Answers API
+
+Base URL:
+
+http://localhost:4000/api/v1/answers
+
+Submit Answers
+
+Endpoint: POST /answers/submit
+Access: Authorized Users (RolesGuard)
+
+Body (JSON):
+
+{
+  "answers": [
+    { "choosenIndex": 1, "questionId": 1 },
+    { "choosenIndex": 2, "questionId": 3 },
+    { "choosenIndex": 2, "questionId": 5 }
+  ]
+}
+
+
+choosenIndex: Foydalanuvchi tanlagan javob indeksi (0 dan boshlanadi)
+
+questionId: Savolning ID raqami
+
+Response (200 OK):
+
+{
+  "message": "Answers processed successfully",
+  "total": 5,
+  "correct": 2,
+  "incorrect": 3
+}
+
+
+Errors:
+
+400 Bad Request: Agar body noto‘g‘ri formatda bo‘lsa
+
+403 Forbidden: Agar foydalanuvchi autentifikatsiyadan o‘tmagan bo‘lsa
